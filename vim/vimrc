@@ -77,7 +77,7 @@ nnoremap <c-p> :FZF<cr>
 nmap <leader>vr :sp $MYVIMRC<cr>
 nmap <leader>so :source $MYVIMRC<cr>
 
-" vim-rspec setup
+" vim-spec setup
 Plugin 'thoughtbot/vim-rspec'
 
 " RSpec.vim mappings
@@ -85,3 +85,43 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+let g:rspec_command = "!spring rspec --drb {spec}"
+
+" Edit the db/schema.rb Rails file in a split
+nmap <leader>sc :split db/schema.rb<cr>
+
+" Tabs configurations
+" "------------------------
+
+for tab_number in [1,2,3,4, 5, 6]
+  execute 'map <silent> <C-w>' . tab_number . ' :tabnext ' . tab_number . '<cr>'
+endfor
+
+nnoremap <leader>wn :tabnew<cr>
+
+" Ruby configurations
+"------------------------
+
+"Ruby is new, and sometimes funtimes
+au BufRead,BufNewFile Vagrantfile, Gemfile, Guardfile set filetype=ruby
+au BufRead,BufNewFile Gemfile set filetype=ruby
+au BufRead,BufNewFile Guardfile set filetype=ruby
+au FileType ruby setl sw=2 sts=2 ts=2 tw=80 " Two spaces per tab
+
+" Set .erb html files
+au FileType ebury setl setl sw=2 sts=2 ts=2 " Two spaces per tab
+
+" Vim surround 
+Plugin 'tpope/vim-surround'
+
+" Rails plugins
+Plugin 'tpope/vim-rails'
+
+" Commentaries
+Plugin 'tpope/vim-commentary'
+
+" Searching
+Plugin 'rking/ag.vim'
+
+set runtimepath^=~/.vim/bundle/ag
