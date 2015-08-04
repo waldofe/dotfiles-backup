@@ -64,21 +64,40 @@ set backspace=indent,eol,start
 " ~/.vim/colors/molokai
 colorscheme molokai 
 
+
 " Vundle setup
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'gmarik/Vundle.vim'
+
+" vim-spec setup
+Plugin 'thoughtbot/vim-rspec'
+
 " FZF setup
 Plugin 'junegunn/fzf'
+
+" Vim surround 
+Plugin 'tpope/vim-surround'
+
+" Rails plugins
+Plugin 'tpope/vim-rails'
+
+" Commentaries
+Plugin 'tpope/vim-commentary'
+
+" Searching
+Plugin 'rking/ag.vim'
+
+call vundle#end()
+
 set rtp+=~/.fzf
 nnoremap <c-p> :FZF<cr>
 
 " Map vimrc editing / saving
-nmap <leader>vr :sp $MYVIMRC<cr>
+nmap <leader>r :sp $MYVIMRC<cr>
 nmap <leader>so :source $MYVIMRC<cr>
 
-" vim-spec setup
-Plugin 'thoughtbot/vim-rspec'
 
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
@@ -86,7 +105,7 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
-let g:rspec_command = "!spring rspec --drb {spec}"
+let g:rspec_command = "!rspec --drb {spec}"
 
 " Edit the db/schema.rb Rails file in a split
 nmap <leader>sc :split db/schema.rb<cr>
@@ -111,17 +130,5 @@ au FileType ruby setl sw=2 sts=2 ts=2 tw=80 " Two spaces per tab
 
 " Set .erb html files
 au FileType ebury setl setl sw=2 sts=2 ts=2 " Two spaces per tab
-
-" Vim surround 
-Plugin 'tpope/vim-surround'
-
-" Rails plugins
-Plugin 'tpope/vim-rails'
-
-" Commentaries
-Plugin 'tpope/vim-commentary'
-
-" Searching
-Plugin 'rking/ag.vim'
 
 set runtimepath^=~/.vim/bundle/ag
