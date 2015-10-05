@@ -191,4 +191,8 @@ endfunction
 
 " Renaming file
 map <leader>n :call RenameFile()<cr>
+
+" Nerdtree toggling
+map <C-n> :NERDTreeToggle<CR>
+
 au BufReadPost *.hbs set filetype=html.mustache syntax=html.mustache
