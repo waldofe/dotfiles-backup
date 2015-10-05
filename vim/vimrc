@@ -139,6 +139,9 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 let g:rspec_command = "!spring rspec --drb {spec}"
 
+" File deleting maps
+nnoremap rm :call delete(expand('%')) \| bdelete!<CR>
+
 " Edit the db/schema.rb Rails file in a split
 nmap <leader>sc :split db/schema.rb<cr>
 
