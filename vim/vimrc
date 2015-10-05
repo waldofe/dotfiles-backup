@@ -75,6 +75,8 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'mustache/vim-mustache-handlebars'
+
 " vim-spec setup
 Plugin 'thoughtbot/vim-rspec'
 
