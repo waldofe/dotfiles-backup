@@ -126,7 +126,7 @@ set rtp+=~/.fzf
 nnoremap <c-p> :FZF<cr>
 
 " Map vimrc editing / saving
-nmap <leader>r :sp $MYVIMRC<cr>
+nmap <leader>vr :sp $MYVIMRC<cr>
 nmap <leader>so :source $MYVIMRC<cr>
 
 
