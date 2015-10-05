@@ -191,3 +191,4 @@ endfunction
 
 " Renaming file
 map <leader>n :call RenameFile()<cr>
+au BufReadPost *.hbs set filetype=html.mustache syntax=html.mustache
