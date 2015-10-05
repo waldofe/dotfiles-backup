@@ -25,6 +25,9 @@ set showcmd
 " mapping of <C-L> below)
 set hlsearch
 
+" Removes trailing spaces automatically
+autocmd BufWritePre :%s/\s\+$//e
+
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
