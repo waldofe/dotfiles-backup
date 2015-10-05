@@ -119,6 +119,9 @@ Plugin 'geekjuice/vim-mocha'
 
 call vundle#end()
 
+" Using vim-json
+au! BufRead,BufNewFile *.json set filetype=json
+
 set rtp+=~/.fzf
 nnoremap <c-p> :FZF<cr>
 
