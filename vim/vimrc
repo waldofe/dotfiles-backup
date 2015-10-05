@@ -127,6 +127,7 @@ nnoremap <c-p> :FZF<cr>
 
 " Map vimrc editing / saving
 nmap <leader>vr :sp $MYVIMRC<cr>
+map <leader>T: :Tabularize /:\zs<cr>
 nmap <leader>so :source $MYVIMRC<cr>
 
 
