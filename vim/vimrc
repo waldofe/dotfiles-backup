@@ -163,4 +163,15 @@ au FileType ruby setl sw=2 sts=2 ts=2 tw=80 " Two spaces per tab
 " Set .erb html files
 au FileType ebury setl setl sw=2 sts=2 ts=2 " Two spaces per tab
 
+" Delete trailing white space when saving
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+
+au BufWrite * :call DeleteTrailingWS()
+
+highlight ExtraWhitespace ctermbg=red
+
 set runtimepath^=~/.vim/bundle/ag
