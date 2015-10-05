@@ -12,6 +12,9 @@ runtime macros/matchit.vim
 " Enable syntax highlighting
 syntax on
 
+" Swap file setup to a custom directory
+set noswapfile
+
 " Better command-line completion
 set wildmenu
 
