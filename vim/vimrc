@@ -66,8 +66,7 @@ nnoremap <C-L> :nohl<CR><C-L>
 set backspace=indent,eol,start
 
 " ~/.vim/colors/molokai
-colorscheme molokai 
-
+colorscheme molokai
 
 " Vundle setup
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -83,7 +82,7 @@ Plugin 'thoughtbot/vim-rspec'
 " FZF setup
 Plugin 'junegunn/fzf'
 
-" Vim surround 
+" Vim surround
 Plugin 'tpope/vim-surround'
 
 " Rails plugins
