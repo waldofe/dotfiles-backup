@@ -95,6 +95,28 @@ Plugin 'tpope/vim-commentary'
 " Searching
 Plugin 'rking/ag.vim'
 
+Plugin 'godlygeek/tabular'
+
+" Whitespace colorizing
+Plugin 'ntpeters/vim-better-whitespace'
+
+" Vim highlightning
+Plugin 'airblade/vim-gitgutter'
+
+" git integration
+Plugin 'tpope/vim-fugitive'
+
+" JS syntax highlightining and indentation improvements
+Plugin 'pangloss/vim-javascript'
+
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'elzr/vim-json'
+
+Plugin 'vim-ruby/vim-ruby'
+
+Plugin 'geekjuice/vim-mocha'
+
 call vundle#end()
 
 set rtp+=~/.fzf
