@@ -26,7 +26,7 @@ set showcmd
 set hlsearch
 
 " Removes trailing spaces automatically
-autocmd BufWritePre *.* :%s/\s\+$//e
+autocmd BufWritePre *.rb :%s/\s\+$//e
 
 " Use case insensitive search, except when using capital letters
 set ignorecase
@@ -72,40 +72,39 @@ colorscheme molokai
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+Plugin 'bling/vim-airline'
+
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'mustache/vim-mustache-handlebars'
 
-" vim-spec setup
-Plugin 'thoughtbot/vim-rspec'
-
 " FZF setup
 Plugin 'junegunn/fzf'
 
-" Vim surround
+" " Vim surround
 Plugin 'tpope/vim-surround'
 
-" Rails plugins
+" " Rails plugins
 Plugin 'tpope/vim-rails'
 
-" Commentaries
+" " Commentaries
 Plugin 'tpope/vim-commentary'
 
-" Searching
+" " Searching
 Plugin 'rking/ag.vim'
 
 Plugin 'godlygeek/tabular'
 
-" Whitespace colorizing
+" " Whitespace colorizing
 Plugin 'ntpeters/vim-better-whitespace'
 
-" Vim highlightning
+" " Vim highlightning
 Plugin 'airblade/vim-gitgutter'
 
-" git integration
+" " git integration
 Plugin 'tpope/vim-fugitive'
 
-" JS syntax highlightining and indentation improvements
+" " JS syntax highlightining and indentation improvements
 Plugin 'pangloss/vim-javascript'
 
 Plugin 'scrooloose/nerdtree'
@@ -114,9 +113,15 @@ Plugin 'elzr/vim-json'
 
 Plugin 'vim-ruby/vim-ruby'
 
-Plugin 'geekjuice/vim-mocha'
+" " Acts like vim-rspec + vim-mocha
+Plugin 'thoughtbot/vim-spec'
 
 call vundle#end()
+
+" Airline config
+let g:airline_theme='badwolf'
+let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Using vim-json
 au! BufRead,BufNewFile *.json set filetype=json
@@ -135,8 +140,6 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-
-let g:rspec_command = "!spring rspec --drb {spec}"
 
 " File deleting maps
 nnoremap rm :call delete(expand('%')) \| bdelete!<CR>
@@ -165,7 +168,7 @@ au FileType ruby setl sw=2 sts=2 ts=2 tw=80 " Two spaces per tab
 " Set .erb html files
 au FileType ebury setl setl sw=2 sts=2 ts=2 " Two spaces per tab
 
-" Delete trailing white space when saving
+" " Delete trailing white space when saving
 func! DeleteTrailingWS()
   exe "normal mz"
   %s/\s\+$//ge
@@ -188,10 +191,34 @@ function! RenameFile()
     endif
 endfunction
 
-" Renaming file
+" " Renaming file
 map <leader>n :call RenameFile()<cr>
 
-" Nerdtree toggling
+" " Nerdtree toggling
 map <C-n> :NERDTreeToggle<CR>
 
 au BufReadPost *.hbs set filetype=html.mustache syntax=html.mustache
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
+" " shortcut for background access
+nnoremap <leader>b :!fg<cr>
+
+" " clipboard copy
+vmap <leader>co :w !pbcopy<cr>
+
+" " Rake routes
+nnoremap <leader>rr :Rake routes<cr>
+
+function! SetPaste()
+  exec ":set paste"
+  exec ":startinsert"
+endfunction
+
+" set paste mode
+nnoremap <leader>P :call SetPaste()<cr>
+
+" set no paste mode
+nnoremap <leader>NP :set nopaste<cr>
+
