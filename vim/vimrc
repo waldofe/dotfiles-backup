@@ -2,8 +2,9 @@
 "===========================================================================
 "                                ~My vimrc~
 "===========================================================================
-" Author:        Chris Toomey [http://oswaldo.me]
+" Author:        Oswaldo Ferreira [http://oswaldo.me]
 " Source:        https://github.com/oswaldoferreira/dotfiles
+" Credits:       https://github.com/christoomey/dotfiles
 "
 " Experiment it later.
 " let mapleader = "\<Space>"
