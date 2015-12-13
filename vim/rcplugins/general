@@ -1,0 +1,70 @@
+Plugin 'bling/vim-airline'
+
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'mustache/vim-mustache-handlebars'
+
+" FZF setup
+Plugin 'junegunn/fzf'
+
+" " Vim surround
+Plugin 'tpope/vim-surround'
+
+" " Rails plugins
+Plugin 'tpope/vim-rails'
+
+" " Commentaries
+Plugin 'tpope/vim-commentary'
+
+" " Searching
+Plugin 'rking/ag.vim'
+
+Plugin 'godlygeek/tabular'
+
+" Whitespace colorizing
+Plugin 'ntpeters/vim-better-whitespace'
+
+" " Vim highlightning
+Plugin 'airblade/vim-gitgutter'
+
+" " git integration
+Plugin 'tpope/vim-fugitive'
+
+" " JS syntax highlightining and indentation improvements
+Plugin 'pangloss/vim-javascript'
+
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'elzr/vim-json'
+
+Plugin 'vim-ruby/vim-ruby'
+
+Plugin 'thoughtbot/vim-rspec'
+
+Plugin 'elixir-lang/vim-elixir'
+
+Plugin 'slim-template/vim-slim'
+
+" Configs
+
+" Airline config
+let g:airline_theme='badwolf'
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+set rtp+=~/.fzf
+nnoremap <c-p> :FZF<cr>
+
+map <leader>T: :Tabularize /:\zs<cr>
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+set runtimepath^=~/.vim/bundle/ag
+
+" Nerdtree toggling
+map <C-n> :NERDTreeToggle<CR>
+

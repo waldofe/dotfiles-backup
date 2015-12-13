@@ -1,0 +1,125 @@
+" Swap file setup to a custom directory
+set noswapfile
+
+" Better command-line completion
+set wildmenu
+
+" Show partial commands in the last line of the screen
+set showcmd
+
+" Highlight searches (use <C-L> to temporarily turn off highlighting; see the
+" mapping of <C-L> below)
+set hlsearch
+
+" Removes trailing spaces automatically
+autocmd BufWritePre *.rb :%s/\s\+$//e
+
+" Use case insensitive search, except when using capital letters
+set ignorecase
+set smartcase
+
+" When opening a new line and no filetype-specific indenting is enabled, keep
+" the same indent as the line you're currently on. Useful for READMEs, etc.
+set autoindent
+
+" Stop certain movements from always going to the first character of a line.
+" While this behaviour deviates from that of Vi, it does what most users
+" coming from other editors would expect.
+set nostartofline
+
+" Display the cursor position on the last line of the screen or in the status
+" line of a window
+set ruler
+
+" Always display the status line, even if only one window is displayed
+set laststatus=2
+
+" Instead of failing a command because of unsaved changes, instead raise a
+" " dialogue asking if you wish to save changed files.
+set confirm
+
+" Use visual bell instead of beeping when doing something wrong
+set visualbell
+
+" Display line numbers on the left
+set number
+
+" Map <C-L> (redraw screen) to also turn off search highlighting until the
+" next search
+nnoremap <C-L> :nohl<CR><C-L>
+
+set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
+
+runtime macros/matchit.vim
+
+" Allow backspacing over autoindent, line breaks and start of insert action
+set backspace=indent,eol,start
+
+" ~/.vim/colors/molokai
+colorscheme jellybeans
+
+" Map vimrc editing / saving
+nmap <leader>vr :sp $MYVIMRC<cr>
+nmap <leader>so :source $MYVIMRC<cr>
+
+" Using vim-json
+au! BufRead,BufNewFile *.json set filetype=json
+
+" File deleting maps
+nnoremap rm :call delete(expand('%')) \| bdelete!<CR>
+
+" Tabs configurations
+" "------------------------
+
+for tab_number in [1,2,3,4, 5, 6]
+  execute 'map <silent> <C-w>' . tab_number . ' :tabnext ' . tab_number . '<cr>'
+endfor
+
+" Delete trailing white space when saving
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+
+au BufWrite * :call DeleteTrailingWS()
+
+highlight ExtraWhitespace ctermbg=red
+
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+
+" Renaming file
+map <leader>n :call RenameFile()<cr>
+
+au BufReadPost *.hbs set filetype=html.mustache syntax=html.mustache
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
+" clipboard copy
+vmap <leader>co :w !pbcopy<cr>
+
+function! SetPaste()
+  exec ":set paste"
+  exec ":startinsert"
+endfunction
+
+" set paste mode
+nnoremap <leader>P :call SetPaste()<cr>
+
+" set no paste mode
+nnoremap <leader>NP :set nopaste<cr>
+
+" save file
+nnoremap <leader>z :update<cr>
+
+
+" vim:ft=vim

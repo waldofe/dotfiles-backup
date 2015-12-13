@@ -1,0 +1,16 @@
+" Ruby configurations
+"------------------------
+nnoremap <leader>wn :tabnew<cr>
+
+" Edit the db/schema.rb Rails file in a split
+nmap <leader>sc :split db/schema.rb<cr>
+
+au BufRead,BufNewFile Vagrantfile, Gemfile, Guardfile set filetype=ruby
+au BufRead,BufNewFile Gemfile set filetype=ruby
+au BufRead,BufNewFile Guardfile set filetype=ruby
+au FileType ruby setl sw=2 sts=2 ts=2 tw=80 " Two spaces per tab
+
+" Set .erb html files
+au FileType ebury setl setl sw=2 sts=2 ts=2 " Two spaces per tab
+
+" vim:ft=vim
