@@ -1,0 +1,8 @@
+" indentLine - Friendlier indentation visualization
+
+Plugin 'Yggdroot/indentLine'
+
+let g:indentLine_color_term = 239
+let g:indentLine_char = '︙'
+
+" vim:ft=vim
