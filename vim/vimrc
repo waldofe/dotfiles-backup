@@ -7,7 +7,7 @@
 " Credits:       https://github.com/christoomey/dotfiles
 "
 
-let mapleader = "\<Space>"
+let mapleader = ","
 
 function! s:SourceConfigFilesIn(directory)
   let directory_splat = '~/.vim/' . a:directory . '/*'
