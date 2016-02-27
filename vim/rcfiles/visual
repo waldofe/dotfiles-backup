@@ -1,2 +1,4 @@
 " Visual configurations
 "------------------------
+
+set gfn=Monaco:h13

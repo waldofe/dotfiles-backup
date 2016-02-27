@@ -48,8 +48,6 @@ set number
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
-set tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
-
 runtime macros/matchit.vim
 
 " Allow backspacing over autoindent, line breaks and start of insert action
@@ -120,6 +118,8 @@ nnoremap <leader>NP :set nopaste<cr>
 
 " save file
 nnoremap <leader>z :update<cr>
+
+set timeout timeoutlen=3000 ttimeoutlen=100
 
 
 " vim:ft=vim
