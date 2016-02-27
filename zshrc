@@ -1,7 +1,6 @@
 export ZSH=/Users/osw/.oh-my-zsh
-ZSH_THEME="bira"
+ZSH_THEME="fishy"
 DISABLE_AUTO_UPDATE="true"
-ENABLE_CORRECTION="true"
 
 plugins=(git zsh-syntax-highlighting)
 
