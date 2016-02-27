@@ -1,0 +1,4 @@
+Plugin 'gmarik/Vundle.vim'
+
+" vim:ft=vim
+

@@ -1,0 +1,5 @@
+Plugin 'rking/ag.vim'
+
+set runtimepath^=~/.vim/bundle/ag
+
+" vim:ft=vim
