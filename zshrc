@@ -5,6 +5,7 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git zsh-syntax-highlighting)
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH=~/.dotfiles/bin:${PATH}
 
 source $ZSH/oh-my-zsh.sh
 
@@ -25,3 +26,5 @@ function bclean() {
   git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
 }
 
+# export TERM="xterm-256color"
+# alias tmux="tmux -2"
