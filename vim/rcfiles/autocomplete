@@ -1,0 +1,3 @@
+imap <Tab> <C-P>
+
+" vim:ft=vim
