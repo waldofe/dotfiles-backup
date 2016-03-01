@@ -1,6 +1,6 @@
 Plugin 'thoughtbot/vim-rspec'
 
-let g:rspec_command = "!spring rspec --drb {spec}"
+let g:rspec_command = "Dispatch spring rspec --drb {spec}"
 
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
