@@ -1,0 +1,14 @@
+" Spec Runner - Generic spec runner for rspec and JS
+
+Bundle 'gabebw/vim-spec-runner'
+
+let g:spec_runner_dispatcher = "Dispatch {command}"
+
+map <leader>s <Plug>RunFocusedSpec
+map <leader>l <Plug>RunMostRecentSpec
+map <leader>t <Plug>RunCurrentSpecFile
+
+command! RunAllSpecs Dispatch coverage=on rspec spec
+nnoremap <leader>a :RunAllSpecs<cr>
+
+" vim:ft=vim

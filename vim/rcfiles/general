@@ -124,5 +124,7 @@ set timeout timeoutlen=3000 ttimeoutlen=100
 " forcing 256 colors
 set t_Co=256
 
+nnoremap <leader>rr :Rake routes<cr>
+
 
 " vim:ft=vim

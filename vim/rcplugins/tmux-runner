@@ -1,0 +1,9 @@
+" VTR - Vim tmux integration
+
+Bundle "christoomey/vim-tmux-runner"
+
+let g:VtrUseVtrMaps = 1
+let g:VtrGitCdUpOnOpen = 0
+let g:VtrPercentage = 30
+
+" vim:ft=vim
