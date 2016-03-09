@@ -6,4 +6,11 @@ let g:VtrUseVtrMaps = 1
 let g:VtrGitCdUpOnOpen = 0
 let g:VtrPercentage = 30
 
+nmap <leader>fs :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
+nmap <C-f> :VtrSendLinesToRunner<cr>
+vmap <C-f> :VtrSendLinesToRunner<cr>
+
+nmap <leader>osr :VtrOpenRunner { 'orientation': 'h', 'percentage': 50 }<cr>
+nmap <leader>opr :VtrOpenRunner { 'orientation': 'h', 'percentage': 50, 'cmd': 'pry' }<cr>
+
 " vim:ft=vim
