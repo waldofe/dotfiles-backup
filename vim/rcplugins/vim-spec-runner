@@ -2,6 +2,7 @@
 
 Bundle 'gabebw/vim-spec-runner'
 
+let g:disable_write_on_spec_run = 1
 let g:spec_runner_dispatcher = "Dispatch {command}"
 
 map <leader>s <Plug>RunFocusedSpec
