@@ -2,7 +2,7 @@
 set noswapfile
 
 " Better command-line completion
-set wildmenu
+" set wildmenu
 
 " Show partial commands in the last line of the screen
 set showcmd
@@ -40,6 +40,11 @@ set confirm
 
 " Use visual bell instead of beeping when doing something wrong
 set visualbell
+
+set autoread                    "Reload files changed outside vim"
+set gcr=a:blinkon0              "Disable cursor blink"
+set list listchars=tab:\ \ ,trail:·
+" set rnu " relative number
 
 " Display line numbers on the left
 set number

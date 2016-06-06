@@ -26,5 +26,10 @@ function bclean() {
   git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
 }
 
-# export TERM="xterm-256color"
-# alias tmux="tmux -2"
+alias mvim='open -a MacVim'
+
+set editing-mode vi
+set keymap vi
+
+alias workout_staging_env='vim scp://workout-staging//data/workout/shared/config/env.yml'
+alias workout_prod_env='vim scp://workout-prod//data/workout/shared/config/env.yml'

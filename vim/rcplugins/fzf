@@ -1,7 +1,7 @@
-Plugin 'junegunn/fzf'
+" Plugin 'junegunn/fzf'
 
-set rtp+=~/.fzf
-nnoremap <c-p> :FZF<cr>
+" set rtp+=~/.fzf
+" nnoremap <c-p> :FZF<cr>
 
 " vim:ft=vim
 
